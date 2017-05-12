@@ -24,19 +24,19 @@ lessons, we should lower the Kp until we decrease the oscillations enough to wea
 I lowered Kp to 0.09. Below, you can see the results of the graphs from when I had Kp initially at 1, then at 0.09. By the time I
 had reached 0.09, the values for the steering angles were at reasonable values.
 
+![alt tag](http://i.imgur.com/HoyCU71.png)
+
 After this was done, it was time to fine-tune the oscillations in the steering angles. I began fiddling with the Kd value to help
 the car counter-steer by letting it notice that the error is being reduced via the derivative of the CTE. Its natural instinct would be to
 move towards the x-axis, but by increasing the Kd, I was able to avoid the overshoot we saw in the previous graph. The graph below
 shows Kd at 0.85, and Kp and 0.09
 
+![alt tag](http://i.imgur.com/AbVn966.png)
 
 Finally, my car was able to drive around the track but as expected, the car was always driving on the right side of the track
 due to the systemic bias of the car. Since we have trained our controller to not get to close to the x-axis, the car will 
 steer more and more to the right. To compensate, I added a small value for Ki, which represents the sustained measure of error. With this,
 the car was able to travel much more stable. Below is a graph of the PID controller with Kd at 0.85, Kp at 0.09, and Ki at 0.001
 
-
-
-
-
+![alt tag](https://s13.postimg.org/mxvu1aslj/PID_controller.png)
 
